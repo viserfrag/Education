@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title> !!!タイトル入れろ!!! </title>
+    </head>
+    <body>
+        <a>XとYに数字を入力</a> <br>
+        X<input type="text" name="textbox1" id="textbox1" /><br>
+        Y<input type="text" name="textbox2" id="textbox2" /><br>
+        <input type="submit" name="button" id="button1" onclick="myfunction()" value="=" /><br>
+        ANSWER <br>
+        X+Y<input type="text" name="textbox3" id="textbox3" readonly="readonly" /><br>
+        X-Y<input type="text" name="textbox4" id="textbox4" readonly="readonly" /><br>
+        X*Y<input type="text" name="textbox5" id="textbox5" readonly="readonly" /><br>
+        X/Y<input type="text" name="textbox6" id="textbox6" readonly="readonly" /><br>
+        X^Y<input type="text" name="textbox7" id="textbox7" readonly="readonly" />
+        <script>
+        function myfunction() {
+            var first = document.getElementById("textbox1").value;
+            var second = document.getElementById("textbox2").value;
+            <!-- id取得 -->
+            var answer = parseFloat(first) + parseFloat(second);
+            var textbox3 = document.getElementById('textbox3');
+            textbox3.value = answer;
+            <!-- 足し算 -->
+            var answer2 = parseFloat(first) - parseFloat(second);
+            var textbox4 = document.getElementById('textbox4');
+            textbox4.value = answer2;
+            <!-- 引き算 -->
+            var answer3 = parseFloat(first) * parseFloat(second);
+            var textbox5 = document.getElementById('textbox5');
+            textbox5.value = answer3;
+            <!-- 掛け算 -->
+            var answer4 = parseFloat(first) / parseFloat(second);
+            var textbox5 = document.getElementById('textbox6');
+            textbox6.value = answer4;
+            <!-- 割り算 -->
+            var answer5 = parseFloat(first) ** parseFloat(second);
+            var textbox5 = document.getElementById('textbox7');
+            textbox7.value = answer5;
+            <!-- 乗算 -->
+        }
+    </script>
+    </body>
+</html>
+
+<!-- (ツ) -->
