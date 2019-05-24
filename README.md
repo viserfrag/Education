@@ -2,8 +2,8 @@ Education
 ====
 
 Overview
-Sharing my programming file for my friend. xd
-do not copy pasta everything. if you dont wanna be cheater
+<dd>Sharing my programming file for my friend.</dd> 
+<dd>xd do not copy pasta everything. if you dont wanna be cheater</dd>
 
 ## Description
 Javasciript
