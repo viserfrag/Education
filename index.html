@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>minnnakamininaru</title>
+    <meta charset="UTF-8">
+</head>
+名前<input type="text" id="Name"> <br>
+住所<input type="text" id="Address"> <br>
+電話番号<input type="text" id="PhoneNumber"> <br>
+メールアドレス<input type="text" id="MailAddress">
+<div id="dynamicCheck" >
+    <input type="button" value="Create Element" onclick="createNewElement();"/>
+</div>
+<div id="newElementId"></div>
+
+<button onclick="check();">Submit</button>
+
+<script>
+    function createNewElement() {
+        // First create a DIV element.
+        var txtNewInputBox = document.createElement('div');
+
+
+        // Then add the content (a new input box) of the element.
+        txtNewInputBox.innerHTML = "メールアドレス<input type='text' id='newInputBox'>";
+        // Finally put it where it is supposed to appear.
+        document.getElementById("newElementId").appendChild(txtNewInputBox);
+
+    }
+    function check() {
+        var text = document.getElementsByTagName('input').value;
+        if (text==null){
+            alert("入力しろ");
+        } else {
+            alert("OK");
+        }
+    }
+
+</script>
+</html>
