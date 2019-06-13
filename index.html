@@ -1,39 +1,34 @@
 <html>
 <head>
-    <title>lol</title>
+<title>yoshidanao</title>
     <meta charset="UTF-8">
 </head>
-名前<input type="text" id="Name"> <br>
-住所<input type="text" id="Address"> <br>
-電話番号<input type="text" id="PhoneNumber"> <br>
-メールアドレス<input type="text" id="MailAddress">
-<div id="dynamicCheck" >
-    <input type="button" value="Create Element" onclick="createNewElement();"/>
-</div>
-<div id="newElementId"></div>
+<body>
+<a>
+    while 文は、テスト条件が true に評価される間、指定された文を実行するループを作成します。<br>
+    for 文によるループは指定された条件が false と評価されるまで繰り返されます。
 
-<button onclick="check();">Submit</button>
-
+</body>
 <script>
-    function createNewElement() {
-        // First create a DIV element.
-        var txtNewInputBox = document.createElement('div');
-
-
-        // Then add the content (a new input box) of the element.
-        txtNewInputBox.innerHTML = "メールアドレス<input type='text' id='newInputBox'>";
-        // Finally put it where it is supposed to appear.
-        document.getElementById("newElementId").appendChild(txtNewInputBox);
-
-    }
-    function check() {
-        var text = document.getElementsByTagName('input').value;
-        if (text==null){
-            alert("入力しろ");
-        } else {
-            alert("OK");
+    var i = 0;
+    while (i < 7) {
+        i++
+        switch (i) {
+            case 1: alert("日曜日"); break;
+            case 2: alert("月曜日"); break;
+            case 3: alert("火曜日"); break;
+            case 4: alert("水曜日"); break;
+            case 5: alert("木曜日"); break;
+            case 6: alert("金曜日"); break;
+            case 7: alert("土曜日"); break;
         }
     }
-
 </script>
+
 </html>
+
+
+
+
+i++;
+alert(i);
