@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>ahaha~</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+神経衰弱<br>
+プレイヤー１のターン<br>
+１回め<br>
+<input type="button" value="プレイヤー交代" disabled="disabled"><br>
+プレイヤー１の得点:
+プレイヤー２の得点：
+
+<table border="1" id="lotto" >
+    <tbody>
+    <tr>
+        <td class="normal" id="cell00">&nbsp;</td>
+        <td class="normal" id="cell01">&nbsp;</td>
+        <td class="normal" id="cell02">&nbsp;</td>
+        <td class="normal" id="cell03">&nbsp;</td>
+        <td class="normal" id="cell04">&nbsp;</td>
+        <td class="red" id="cell05">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="normal" id="cell10">&nbsp;</td>
+        <td class="normal" id="cell11">&nbsp;</td>
+        <td class="normal" id="cell12">&nbsp;</td>
+        <td class="normal" id="cell13">&nbsp;</td>
+        <td class="normal" id="cell14">&nbsp;</td>
+        <td class="red" id="cell15">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="normal" id="cell20">&nbsp;</td>
+        <td class="normal" id="cell21">&nbsp;</td>
+        <td class="normal" id="cell22">&nbsp;</td>
+        <td class="normal" id="cell23">&nbsp;</td>
+        <td class="normal" id="cell24">&nbsp;</td>
+        <td class="red" id="cell25">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="normal" id="cell30">&nbsp;</td>
+        <td class="normal" id="cell31">&nbsp;</td>
+        <td class="normal" id="cell32">&nbsp;</td>
+        <td class="normal" id="cell33">&nbsp;</td>
+        <td class="normal" id="cell34">&nbsp;</td>
+        <td class="red" id="cell35">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="normal" id="cell40">&nbsp;</td>
+        <td class="normal" id="cell41">&nbsp;</td>
+        <td class="normal" id="cell42">&nbsp;</td>
+        <td class="normal" id="cell43">&nbsp;</td>
+        <td class="normal" id="cell44">&nbsp;</td>
+        <td class="red" id="cell45">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="normal" id="cell50">&nbsp;</td>
+        <td class="normal" id="cell51">&nbsp;</td>
+        <td class="normal" id="cell52">&nbsp;</td>
+        <td class="normal" id="cell53">&nbsp;</td>
+        <td class="normal" id="cell54">&nbsp;</td>
+        <td class="red" id="cell55">&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+<script>
+    var btn = document.getElementById('lotto');
+
+    btn.addEventListener('click', UpdateTable);
+
+    var maxLength = 6;
+
+    function CreateLottoValues() {
+        return Math.floor(Math.random() * 999 + 1);
+    }
+
+    //create table
+    function UpdateTable() {
+        for (var i = 0; i < maxLength; i++) {
+            for (var j = 0; j < maxLength; j++) {
+                tmp = 'cell' + i + j;
+                document.getElementById(tmp).innerHTML = CreateLottoValues();
+            }
+        }
+    }
+
+    UpdateTable();
+</script>
+</html>
