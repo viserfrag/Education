@@ -1,34 +1,111 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>yoshidanao</title>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <title>くそげー</title>
 </head>
 <body>
-<a>
-    while 文は、テスト条件が true に評価される間、指定された文を実行するループを作成します。<br>
-    for 文によるループは指定された条件が false と評価されるまで繰り返されます。
+神経衰弱<br />
+<span id="player">プレーヤー1のターン</span><br />
+<span id="count">1回目</span><br />
+<button onclick="aaa" id="changePlayer" disabled="disabled">プレーヤー交代</button><br />
+プレーヤー１の得点：
+<span id="point1">0</span><br />
+プレーヤー２の得点：
+<span id="point2">0</span>
+
+<table border="1" id="lotto" >
+    <tbody>
+    <tr>
+        <td>&nbsp;</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td class="normal" id="cell00">&nbsp;</td>
+        <td class="normal" id="cell01">&nbsp;</td>
+        <td class="normal" id="cell02">&nbsp;</td>
+        <td class="normal" id="cell03">&nbsp;</td>
+        <td class="normal" id="cell04">&nbsp;</td>
+        <td class="red" id="cell05">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td class="normal" id="cell10">&nbsp;</td>
+        <td class="normal" id="cell11">&nbsp;</td>
+        <td class="normal" id="cell12">&nbsp;</td>
+        <td class="normal" id="cell13">&nbsp;</td>
+        <td class="normal" id="cell14">&nbsp;</td>
+        <td class="red" id="cell15">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td class="normal" id="cell20">&nbsp;</td>
+        <td class="normal" id="cell21">&nbsp;</td>
+        <td class="normal" id="cell22">&nbsp;</td>
+        <td class="normal" id="cell23">&nbsp;</td>
+        <td class="normal" id="cell24">&nbsp;</td>
+        <td class="red" id="cell25">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td class="normal" id="cell30">&nbsp;</td>
+        <td class="normal" id="cell31">&nbsp;</td>
+        <td class="normal" id="cell32">&nbsp;</td>
+        <td class="normal" id="cell33">&nbsp;</td>
+        <td class="normal" id="cell34">&nbsp;</td>
+        <td class="red" id="cell35">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td class="normal" id="cell40">&nbsp;</td>
+        <td class="normal" id="cell41">&nbsp;</td>
+        <td class="normal" id="cell42">&nbsp;</td>
+        <td class="normal" id="cell43">&nbsp;</td>
+        <td class="normal" id="cell44">&nbsp;</td>
+        <td class="red" id="cell45">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td class="normal" id="cell50">&nbsp;</td>
+        <td class="normal" id="cell51">&nbsp;</td>
+        <td class="normal" id="cell52">&nbsp;</td>
+        <td class="normal" id="cell53">&nbsp;</td>
+        <td class="normal" id="cell54">&nbsp;</td>
+        <td class="red" id="cell55">&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+
 
 </body>
-<script>
-    var i = 0;
-    while (i < 7) {
-        i++
-        switch (i) {
-            case 1: alert("日曜日"); break;
-            case 2: alert("月曜日"); break;
-            case 3: alert("火曜日"); break;
-            case 4: alert("水曜日"); break;
-            case 5: alert("木曜日"); break;
-            case 6: alert("金曜日"); break;
-            case 7: alert("土曜日"); break;
-        }
-    }
-</script>
-
 </html>
 
+<script>
+    var btn = document.getElementById('lotto');
 
+    btn.addEventListener('click', UpdateTable);
 
+    var maxLength = 6;
 
-i++;
-alert(i);
+    function CreateLottoValues() {
+        return Math.floor(Math.random() * 17 + 1);
+    }
+
+    //create table
+    function UpdateTable() {
+        for (var i = 0; i < maxLength; i++) {
+            for (var j = 0; j < maxLength; j++) {
+                tmp = 'cell' + i + j;
+                document.getElementById(tmp).innerHTML = CreateLottoValues();
+            }
+        }
+    }
+
+    UpdateTable();
+</script>
